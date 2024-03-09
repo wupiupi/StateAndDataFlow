@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+final class LoginViewViewModel: ObservableObject {
+    var user = User(name: "")
+    @Published var isLoggedIn = false
+}
