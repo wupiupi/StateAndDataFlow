@@ -5,6 +5,7 @@
 //  Created by Paul Makey on 9.03.24.
 //
 
-struct User {
+struct User: Codable {
     var name: String
+    var isLoggedIn: Bool
 }

@@ -13,7 +13,7 @@ struct MainView: View {
     
     var body: some View { 
         VStack {
-            Text("Hello, \(loginViewVM.user.name)!")
+            Text("Hello, \(loginViewVM.user.name)! 👋🏻")
                 .padding(.top, 100)
                 .font(.largeTitle)
             
