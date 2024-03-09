@@ -14,6 +14,8 @@
 		A043AD8D2B9B74D000A771FD /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */; };
 		A043AD8F2B9B74F000A771FD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD8E2B9B74F000A771FD /* LoginView.swift */; };
 		A043AD912B9B74FE00A771FD /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD902B9B74FE00A771FD /* LoginViewViewModel.swift */; };
+		A043AD962B9B7DF000A771FD /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD952B9B7DF000A771FD /* RootView.swift */; };
+		A0F5C5EA2B9C476300EB3349 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5C5E92B9C476300EB3349 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
 		A043AD8E2B9B74F000A771FD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A043AD902B9B74FE00A771FD /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		A043AD952B9B7DF000A771FD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A0F5C5E92B9C476300EB3349 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,12 @@
 		A043AD7B2B9B723500A771FD /* StateAndDataFlow */ = {
 			isa = PBXGroup;
 			children = (
-				A043AD8B2B9B74BA00A771FD /* ContentView */,
-				A043AD8A2B9B74B600A771FD /* LoginView */,
 				A043AD7C2B9B723500A771FD /* StateAndDataFlowApp.swift */,
+				A043AD8A2B9B74B600A771FD /* LoginView */,
+				A043AD8B2B9B74BA00A771FD /* ContentView */,
+				A043AD942B9B7DCF00A771FD /* Services */,
+				A043AD932B9B7DCA00A771FD /* Models */,
+				A043AD922B9B7DC600A771FD /* Views */,
 				A043AD802B9B723600A771FD /* Assets.xcassets */,
 				A043AD822B9B723600A771FD /* Preview Content */,
 			);
@@ -90,6 +97,29 @@
 				A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		A043AD922B9B7DC600A771FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A043AD952B9B7DF000A771FD /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A043AD932B9B7DCA00A771FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0F5C5E92B9C476300EB3349 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A043AD942B9B7DCF00A771FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +194,11 @@
 			files = (
 				A043AD912B9B74FE00A771FD /* LoginViewViewModel.swift in Sources */,
 				A043AD7F2B9B723500A771FD /* ContentView.swift in Sources */,
+				A043AD962B9B7DF000A771FD /* RootView.swift in Sources */,
 				A043AD7D2B9B723500A771FD /* StateAndDataFlowApp.swift in Sources */,
 				A043AD8F2B9B74F000A771FD /* LoginView.swift in Sources */,
 				A043AD8D2B9B74D000A771FD /* ContentViewViewModel.swift in Sources */,
+				A0F5C5EA2B9C476300EB3349 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

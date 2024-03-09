@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(ContentViewViewModel.self) var contentViewVM
+    @EnvironmentObject private var loginViewVM: LoginViewViewModel
+    
     var body: some View {
         VStack {
-            Text("Hello, Paul!")
+            Text("Hello, \(loginViewVM.user.name)!")
                 .padding(.top, 100)
                 .font(.largeTitle)
             
-            Text("0")
+            Text(contentViewVM.counter.formatted())
                 .font(.largeTitle)
                 .padding(.top, 100)
                         
-            ActionButton(title: "Start", color: .red)
+            ButtonView(
+                contentViewVM: contentViewVM,
+                title: contentViewVM.buttonTitle,
+                color: .red
+            )
                 .padding(.top, 50)
             
             Spacer()
             
-            ActionButton(title: "Logout", color: .blue)
+            ButtonView(
+                contentViewVM: contentViewVM,
+                title: "Logout",
+                color: .blue
+            )
                 .padding(.bottom, 50)
         }
     }
@@ -31,14 +42,18 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(LoginViewViewModel())
+        .environment(ContentViewViewModel())
 }
 
-struct ActionButton: View {
+struct ButtonView: View {
+   var contentViewVM: ContentViewViewModel
+    
     let title: String
     let color: Color
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: contentViewVM.startTimer) {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)

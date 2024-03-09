@@ -8,7 +8,16 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject private var loginViewVM: LoginViewViewModel
+    
     @State private var text = ""
+    @State private var shouldBeDisabled = true
+    
+    private var symbolsCounter: Int {
+        text.count
+    }
+    
     var body: some View {
         VStack(spacing: 26) {
             
@@ -18,19 +27,31 @@ struct LoginView: View {
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 300)
                 
-                Text("0")
+                Text(symbolsCounter.formatted())
+                    .onChange(of: text) { _, newValue in
+                        shouldBeDisabled = newValue.count >= 3 
+                        ? false
+                        : true
+                    }
             }
             
-            Button(action: {}) {
+            Button(action: login) {
                 Label("Enter", systemImage: "checkmark.circle")
             }
+            .disabled(shouldBeDisabled)
             
             Spacer()
         }
         .padding(.top, 250)
     }
+    
+    private func login() {
+        loginViewVM.user.name = text
+        loginViewVM.isLoggedIn.toggle()
+    }
 }
 
 #Preview {
     LoginView()
+        .environmentObject(LoginViewViewModel())
 }
