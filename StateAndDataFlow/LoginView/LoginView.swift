@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
 
+    private let storageManager = StorageManager.shared
+    
     var body: some View {
         VStack(spacing: 26) {
             

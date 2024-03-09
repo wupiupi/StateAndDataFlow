@@ -10,7 +10,6 @@ import Observation
 
 @Observable
 final class MainViewViewModel {
-        
     var counter = 3
     var buttonTitle = "Start"
     
@@ -27,6 +26,15 @@ final class MainViewViewModel {
             )
         }
         buttonDidTapped()
+    }
+    
+    func logout() {
+        guard var user = StorageManager.shared.fetch() else { return }
+        print(user.isLoggedIn, user.name)
+        user.isLoggedIn.toggle()
+        print(user.isLoggedIn, user.name)
+        
+        StorageManager.shared.save(user: user)
     }
     
     @objc private func updateCounter() {

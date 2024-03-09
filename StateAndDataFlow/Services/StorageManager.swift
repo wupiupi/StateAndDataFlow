@@ -9,25 +9,27 @@ import SwiftUI
 
 final class StorageManager {
     static let shared = StorageManager()
+    @AppStorage("User") private var savedUser: Data?
     
     private init() {}
     
-    func create(user: User) {
+    func save(user: User) {
         do {
             let encodedData = try JSONEncoder().encode(user.self)
-            @AppStorage("user") var user = encodedData
+            savedUser = encodedData
         } catch {
-            fatalError("Ошибка в сохранении данных")
+            print("Ошибка в сохранении данных")
         }
     }
     
-    func fetch() -> User {
-        @AppStorage("user") var data = Data()
+    func fetch() -> User? {
+        guard let savedUser else { return User(name: "", isLoggedIn: true) }
         do {
-            let user = try JSONDecoder().decode(User.self, from: data)
+            let user = try JSONDecoder().decode(User.self, from: savedUser)
             return user
         } catch {
-            fatalError("Ошибка в получении данных")
+            print("Ошибка в получении данных")
         }
+        return User(name: "", isLoggedIn: true)
     }
 }

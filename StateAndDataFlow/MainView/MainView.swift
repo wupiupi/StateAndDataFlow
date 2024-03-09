@@ -11,9 +11,11 @@ struct MainView: View {
     @Environment(MainViewViewModel.self) var mainViewVM
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
-    var body: some View { 
+    private var user = StorageManager.shared.fetch()
+        
+    var body: some View {
         VStack {
-            Text("Hello, \(loginViewVM.user.name)! 👋🏻")
+            Text("Hello, \(user?.name ?? "")! 👋🏻")
                 .padding(.top, 100)
                 .font(.largeTitle)
             
@@ -35,14 +37,10 @@ struct MainView: View {
                 mainViewVM: mainViewVM,
                 title: "Logout",
                 color: .blue,
-                action: logout
+                action: mainViewVM.logout
             )
                 .padding(.bottom, 50)
         }
-    }
-    
-    private func logout() {
-        loginViewVM.isLoggedIn.toggle()
     }
 }
 

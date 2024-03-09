@@ -9,9 +9,10 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
+    private let user = StorageManager.shared.fetch()
     
     var body: some View {
-        if loginViewVM.isLoggedIn {
+        if ((user?.isLoggedIn) != nil) {
             MainView()
         } else {
             LoginView()
