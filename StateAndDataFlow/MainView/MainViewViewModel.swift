@@ -10,7 +10,7 @@ import Observation
 
 @Observable
 final class MainViewViewModel {
-    
+        
     var counter = 3
     var buttonTitle = "Start"
     

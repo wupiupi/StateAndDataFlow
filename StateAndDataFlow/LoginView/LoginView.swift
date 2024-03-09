@@ -28,7 +28,7 @@ struct LoginView: View {
                     .foregroundStyle(loginViewVM.validationColor)
             }
             
-            Button(action: login) {
+            Button(action: loginViewVM.login) {
                 Label("Enter", systemImage: "checkmark.circle")
             }
             .disabled(!loginViewVM.shouldBeEnabled)

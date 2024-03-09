@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 final class LoginViewViewModel: ObservableObject {
+    
     @Published var isLoggedIn = false
     @Published var text = ""
     @Published var shouldBeEnabled = false
@@ -30,6 +31,7 @@ final class LoginViewViewModel: ObservableObject {
     
     func login() {
         user.name = text
+        text = ""
         isLoggedIn.toggle()
     }
 }

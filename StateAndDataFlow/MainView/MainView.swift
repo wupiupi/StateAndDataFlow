@@ -8,35 +8,41 @@
 import SwiftUI
 
 struct MainView: View {
-    @Environment(MainViewViewModel.self) var contentViewVM
+    @Environment(MainViewViewModel.self) var mainViewVM
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
-    var body: some View {
+    var body: some View { 
         VStack {
             Text("Hello, \(loginViewVM.user.name)!")
                 .padding(.top, 100)
                 .font(.largeTitle)
             
-            Text(contentViewVM.counter.formatted())
+            Text(mainViewVM.counter.formatted())
                 .font(.largeTitle)
                 .padding(.top, 100)
                         
             ButtonView(
-                contentViewVM: contentViewVM,
-                title: contentViewVM.buttonTitle,
-                color: .red
+                mainViewVM: mainViewVM,
+                title: mainViewVM.buttonTitle,
+                color: .red,
+                action: mainViewVM.startTimer
             )
                 .padding(.top, 50)
             
             Spacer()
             
             ButtonView(
-                contentViewVM: contentViewVM,
+                mainViewVM: mainViewVM,
                 title: "Logout",
-                color: .blue
+                color: .blue,
+                action: logout
             )
                 .padding(.bottom, 50)
         }
+    }
+    
+    private func logout() {
+        loginViewVM.isLoggedIn.toggle()
     }
 }
 
@@ -47,13 +53,14 @@ struct MainView: View {
 }
 
 struct ButtonView: View {
-   var contentViewVM: MainViewViewModel
+   var mainViewVM: MainViewViewModel
     
     let title: String
     let color: Color
+    let action: () -> ()
     
     var body: some View {
-        Button(action: contentViewVM.startTimer) {
+        Button(action: action) {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
