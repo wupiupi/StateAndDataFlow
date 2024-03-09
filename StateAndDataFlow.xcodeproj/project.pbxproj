@@ -8,26 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		A043AD7D2B9B723500A771FD /* StateAndDataFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD7C2B9B723500A771FD /* StateAndDataFlowApp.swift */; };
-		A043AD7F2B9B723500A771FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD7E2B9B723500A771FD /* ContentView.swift */; };
+		A043AD7F2B9B723500A771FD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD7E2B9B723500A771FD /* MainView.swift */; };
 		A043AD812B9B723600A771FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A043AD802B9B723600A771FD /* Assets.xcassets */; };
 		A043AD842B9B723600A771FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A043AD832B9B723600A771FD /* Preview Assets.xcassets */; };
-		A043AD8D2B9B74D000A771FD /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */; };
+		A043AD8D2B9B74D000A771FD /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD8C2B9B74D000A771FD /* MainViewViewModel.swift */; };
 		A043AD8F2B9B74F000A771FD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD8E2B9B74F000A771FD /* LoginView.swift */; };
 		A043AD912B9B74FE00A771FD /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD902B9B74FE00A771FD /* LoginViewViewModel.swift */; };
 		A043AD962B9B7DF000A771FD /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AD952B9B7DF000A771FD /* RootView.swift */; };
+		A08EF3F92B9C958600B1CF55 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EF3F82B9C958600B1CF55 /* StorageManager.swift */; };
 		A0F5C5EA2B9C476300EB3349 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5C5E92B9C476300EB3349 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A043AD792B9B723500A771FD /* StateAndDataFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateAndDataFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A043AD7C2B9B723500A771FD /* StateAndDataFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAndDataFlowApp.swift; sourceTree = "<group>"; };
-		A043AD7E2B9B723500A771FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A043AD7E2B9B723500A771FD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A043AD802B9B723600A771FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A043AD832B9B723600A771FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
+		A043AD8C2B9B74D000A771FD /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		A043AD8E2B9B74F000A771FD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A043AD902B9B74FE00A771FD /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		A043AD952B9B7DF000A771FD /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A08EF3F82B9C958600B1CF55 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A0F5C5E92B9C476300EB3349 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +65,7 @@
 			children = (
 				A043AD7C2B9B723500A771FD /* StateAndDataFlowApp.swift */,
 				A043AD8A2B9B74B600A771FD /* LoginView */,
-				A043AD8B2B9B74BA00A771FD /* ContentView */,
+				A043AD8B2B9B74BA00A771FD /* MainView */,
 				A043AD942B9B7DCF00A771FD /* Services */,
 				A043AD932B9B7DCA00A771FD /* Models */,
 				A043AD922B9B7DC600A771FD /* Views */,
@@ -90,13 +92,13 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		A043AD8B2B9B74BA00A771FD /* ContentView */ = {
+		A043AD8B2B9B74BA00A771FD /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				A043AD7E2B9B723500A771FD /* ContentView.swift */,
-				A043AD8C2B9B74D000A771FD /* ContentViewViewModel.swift */,
+				A043AD7E2B9B723500A771FD /* MainView.swift */,
+				A043AD8C2B9B74D000A771FD /* MainViewViewModel.swift */,
 			);
-			path = ContentView;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		A043AD922B9B7DC600A771FD /* Views */ = {
@@ -118,6 +120,7 @@
 		A043AD942B9B7DCF00A771FD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A08EF3F82B9C958600B1CF55 /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,12 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A043AD912B9B74FE00A771FD /* LoginViewViewModel.swift in Sources */,
-				A043AD7F2B9B723500A771FD /* ContentView.swift in Sources */,
+				A043AD7F2B9B723500A771FD /* MainView.swift in Sources */,
 				A043AD962B9B7DF000A771FD /* RootView.swift in Sources */,
 				A043AD7D2B9B723500A771FD /* StateAndDataFlowApp.swift in Sources */,
 				A043AD8F2B9B74F000A771FD /* LoginView.swift in Sources */,
-				A043AD8D2B9B74D000A771FD /* ContentViewViewModel.swift in Sources */,
+				A043AD8D2B9B74D000A771FD /* MainViewViewModel.swift in Sources */,
 				A0F5C5EA2B9C476300EB3349 /* User.swift in Sources */,
+				A08EF3F92B9C958600B1CF55 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

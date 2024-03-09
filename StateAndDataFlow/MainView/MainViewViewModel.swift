@@ -1,5 +1,5 @@
 //
-//  ContentViewViewModel.swift
+//  MainViewViewModel.swift
 //  StateAndDataFlow
 //
 //  Created by Paul Makey on 8.03.24.
@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-final class ContentViewViewModel {
+final class MainViewViewModel {
     
     var counter = 3
     var buttonTitle = "Start"

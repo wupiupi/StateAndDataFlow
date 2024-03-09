@@ -8,46 +8,34 @@
 import SwiftUI
 
 struct LoginView: View {
-    
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
-    
-    @State private var text = ""
-    @State private var shouldBeDisabled = true
-    
-    private var symbolsCounter: Int {
-        text.count
-    }
-    
+
     var body: some View {
         VStack(spacing: 26) {
             
-            HStack(spacing: 20) {
-                TextField("Enter your name:", text: $text)
+            HStack(spacing: 10) {
+                TextField("Enter your name:", text: $loginViewVM.text)
                     .multilineTextAlignment(.leading)
                 .textFieldStyle(.roundedBorder)
-                .frame(width: 300)
+                .frame(width: 275)
+                .border(loginViewVM.validationColor)
                 
-                Text(symbolsCounter.formatted())
-                    .onChange(of: text) { _, newValue in
-                        shouldBeDisabled = newValue.count >= 3 
-                        ? false
-                        : true
+                Text(loginViewVM.counter.formatted())
+                    .frame(width: 25, alignment: .trailing)
+                    .onChange(of: loginViewVM.text) { _, _ in
+                        loginViewVM.validateText()
                     }
+                    .foregroundStyle(loginViewVM.validationColor)
             }
             
             Button(action: login) {
                 Label("Enter", systemImage: "checkmark.circle")
             }
-            .disabled(shouldBeDisabled)
+            .disabled(!loginViewVM.shouldBeEnabled)
             
             Spacer()
         }
         .padding(.top, 250)
-    }
-    
-    private func login() {
-        loginViewVM.user.name = text
-        loginViewVM.isLoggedIn.toggle()
     }
 }
 

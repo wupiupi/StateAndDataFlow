@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  StateAndDataFlow
 //
 //  Created by Paul Makey on 8.03.24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @Environment(ContentViewViewModel.self) var contentViewVM
+struct MainView: View {
+    @Environment(MainViewViewModel.self) var contentViewVM
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
     var body: some View {
@@ -41,13 +41,13 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
         .environmentObject(LoginViewViewModel())
-        .environment(ContentViewViewModel())
+        .environment(MainViewViewModel())
 }
 
 struct ButtonView: View {
-   var contentViewVM: ContentViewViewModel
+   var contentViewVM: MainViewViewModel
     
     let title: String
     let color: Color
